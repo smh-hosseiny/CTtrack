@@ -20,7 +20,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-We present ConvTract, a DCNN-based framework for automatic whole-brain fiber tractography. The introduced model comprises 3D and 2D convolutional layers to regress the fiber Orientation Distribution Functions that are subsequently utilized to perform deterministic tractography using SD-Stream algorithm. The introduced pipeline was evaluated in terms of fODF estimation accuracy and tractography generalizability. Moreover, the framework was scored using the Tractometer tool, a publicly available tractography benchmark, for quantitative assessment of tractography quality. The obtained results showed that this approach outperforms classical and current state-of-the-art data-driven tractography algorithms.
+We present ConvTract, a DCNN-based framework for automatic whole-brain fiber tractography. The introduced model comprises 3D and 2D convolutional layers to regress the fiber Orientation Distribution Functions that are subsequently utilized to perform deterministic tractography using SD-Stream algorithm. The introduced pipeline was evaluated in terms of fODF estimation accuracy and tractography generalizability and outperformed classical and current state-of-the-art data-driven algorithms.
 
 
 
