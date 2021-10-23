@@ -52,6 +52,7 @@ def network(grad_directions, output_size, dropout):
     x = layers.Conv2D(256, (3,3), padding = 'same', activation = 'relu')(x)
     x = layers.Conv2D(512, (3,3), activation = 'relu')(x)
     x = layers.Flatten()(x)
+    x = layers.Dropout(dropout)(x)
     out = layers.Dense(output_size, activation = 'linear')(x)
     predictor = keras.Model(inputs = pi, outputs = out, name="predictor")
 
