@@ -1,8 +1,10 @@
-<!-- PROJECT LOGO -->
+# ConvTract: A Convolutional-based Framework for Tractography
+<!-- PROJECT LOGO 
 <br />
 <p align="center">
     <img src="figures/title.PNG" alt="Logo" width="900" height="120">
 </p>
+-->
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
