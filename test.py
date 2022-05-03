@@ -1,4 +1,5 @@
-from utils.data_handling import *
+from utils.utils import *
+from utils.model import *
 from os.path import join
 import tensorflow as tf
 from tqdm import tqdm
@@ -8,9 +9,8 @@ import subprocess
 import os
 
 
-class Tracker:
+class Test:
     def __init__(self, args):
-
         tf.config.experimental.set_visible_devices([], 'GPU')
         current_dir = os.getcwd()
         self.params = args
@@ -21,7 +21,7 @@ class Tracker:
         self.trained_model_dir = self.params.trained_model_dir
         self.model = None
         self.load_model()
-        self.data_handler = DataHandler(self.params, mode='track')
+        self.data_handler = DataHandler(self.params, mode='test')
         self.mask = self.data_handler.brain_mask
         self.wm_mask_path = self.data_handler.wm_mask_path
         self.brain_mask_path = self.data_handler.brain_mask_path
@@ -34,10 +34,16 @@ class Tracker:
         self.min_length = self.params.min_length
 
         
+    def set_model(self):
+        self.model = network(200)
+        return
+
     def load_model(self):
-        self.model = tf.keras.models.load_model(self.trained_model_dir, compile = False)
-        self.model.summary()
-            
+        self.set_model()
+        if os.path.exists(self.trained_model_dir):
+            print('loading model...')
+            self.model.load_weights(self.trained_model_dir)
+        self.model.summary() 
         return
         
      
@@ -65,21 +71,15 @@ class Tracker:
                     lz, uz = get_range(k, X.shape[2])
                     
                     block = np.zeros([3, 3, 3, X.shape[-1]])
-                    the_mask = np.zeros([3, 3, 3])
-                    b0 = np.ones([3, 3, 3])
                     vicinity = X[lx:ux, ly:uy, lz:uz]
                     block[lx-i+1: ux-i+1,  ly-j+1:uy-j+1, lz-k+1:uz-k+1] = vicinity
-                    the_mask[lx-i+1: ux-i+1,  ly-j+1:uy-j+1, lz-k+1:uz-k+1] = self.mask[lx:ux, ly:uy, lz:uz]
-                    b0[lx-i+1: ux-i+1,  ly-j+1:uy-j+1, lz-k+1:uz-k+1] = self.data_handler.b0[lx:ux, ly:uy, lz:uz]
-                    block = block * np.tile(the_mask[..., None], (1, 1, 1, X.shape[-1]))
                     
-                    b0_batch.append(b0)
                     X_batch.append(block)
                     indices.append([i,j,k])
                     is_over = (i==X.shape[0]-1 and j==X.shape[1]-1 and k==X.shape[2]-1)
                     
                     if len(X_batch) == self.track_batch_size or is_over:
-                        processed_batch = self.data_handler.preprocess(np.asarray(X_batch), np.asarray(b0_batch))
+                        processed_batch = self.data_handler.preprocess(np.asarray(X_batch))
                         X_batch = np.asarray(processed_batch)
                         X_batch_padded = np.zeros([self.track_batch_size, *processed_batch.shape[1:]])
                         X_batch_padded[:len(X_batch)] = X_batch
@@ -92,7 +92,6 @@ class Tracker:
                         pred = pred * mask[..., None]
                         prediction[idx[:,0], idx[:,1], idx[:,2],:] = pred
                         X_batch = []
-                        b0_batch = []
                         indices = []
 
         
