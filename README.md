@@ -1,4 +1,4 @@
-# ConvTract: A Convolutional-based Framework for Tractography
+# Transformer-based Framework for Fiber Orientation Estimation \& Tractography
 <!-- PROJECT LOGO 
 <br />
 <p align="center">
@@ -36,7 +36,7 @@ python3 convtract.py 'train' sample-data/dwi/ -labels sample-data/sh.nii.gz -bm 
  ```
 ### tracking
  ```sh
-python3 convtract.py 'track' sample-data/dwi/ -bm sample-data/bm.nii.gz -wm sample-data/wm.nii.gz -trained_model_dir ConvTract.hdf5 
+python3 convtract.py 'track' sample-data/dwi/ -bm sample-data/bm.nii.gz -wm sample-data/wm.nii.gz -trained_model_dir AOT.ckpt 
 ```
 
 Refer to _[help.txt](help.txt)_ for more details.
