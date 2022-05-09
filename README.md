@@ -10,7 +10,7 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#convtract">Model</a></li>
+    <li><a href="#convtract">Approach</a></li>
     <li><a href="#how-to-use">How to use</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#license">License</a></li>
@@ -20,7 +20,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## ConvTract
+## Approach
 
 We introduce a transformer-based framework for fiber orientation distribution function (fODF) estimation and automatic fiber tractography. A CNN+transformer model is proposed to estimate fODFs using diffusion values in a local block around each voxel
 
