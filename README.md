@@ -10,7 +10,7 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#convtract">ConvTract</a></li>
+    <li><a href="#convtract">Model</a></li>
     <li><a href="#how-to-use">How to use</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#license">License</a></li>
@@ -22,7 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 ## ConvTract
 
-We present ConvTract, a DCNN-based framework for automatic whole-brain fiber tractography. The introduced model comprises 3D and 2D convolutional layers to regress the fiber Orientation Distribution Functions that are subsequently utilized to perform deterministic tractography using SD-Stream algorithm. The introduced pipeline was evaluated in terms of fODF estimation accuracy and tractography generalizability and outperformed classical and current state-of-the-art data-driven algorithms.
+We introduce a transformer-based framework for fiber orientation distribution function (fODF) estimation and automatic fiber tractography. A CNN+transformer model is proposed to estimate fODFs using diffusion values in a local block around each voxel
 
 
 
