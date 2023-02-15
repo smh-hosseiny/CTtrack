@@ -1,4 +1,4 @@
-# Transformer-based Framework for Fiber Orientation Estimation \& Tractography
+# CTtrack: A CNN+Transformer-based framework for fiber orientation estimation \& tractography 
 <!-- PROJECT LOGO 
 <br />
 <p align="center">
@@ -22,7 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Approach
 
-We introduce a transformer-based framework for fiber orientation distribution function (fODF) estimation and automatic fiber tractography. A CNN+transformer model is proposed to estimate fODFs using diffusion values in a local block around each voxel
+We introduce a Convoulutional + Transformer-based framework for fiber orientation distribution function (fODF) estimation and automatic fiber tractography. The proposed model estimates fODFs using diffusion values in a local block around each voxel, taking into account the spatial information in the area.
 
 
 
