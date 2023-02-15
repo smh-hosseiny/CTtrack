@@ -62,7 +62,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 If you use CTtrack in your research or wish to refer to this approach, please use the following BibTeX entry.
  ```sh
 @article{HOSSEINI2022100099,
-title = {CTtrack: A CNN+Transformer-based framework for fiber orientation estimation \& tractography},
+title = {CTtrack: A CNN+Transformer-based framework for fiber orientation estimation & tractography},
 journal = {Neuroscience Informatics},
 year = {2022},
 }
