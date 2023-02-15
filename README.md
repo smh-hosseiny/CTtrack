@@ -1,10 +1,10 @@
 # CTtrack: A CNN+Transformer-based framework for fiber orientation estimation \& tractography 
-<!-- PROJECT LOGO 
-<br />
-<p align="center">
-    <img src="figures/title.PNG" alt="Logo" width="900" height="120">
-</p>
--->
+
+[[`paper`](https://www.sciencedirect.com/science/article/pii/S2772528622000619#fg0020)]
+
+<div align="center">
+  <img src="figures/arch.jpg" alt="architecture" width="100%" height="100%"/>
+</div><br/>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
