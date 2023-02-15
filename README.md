@@ -14,6 +14,7 @@
     <li><a href="#how-to-use">How to use</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#citation">Citation</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -23,8 +24,6 @@
 ## Approach
 
 We introduce a Convoulutional + Transformer-based framework for fiber orientation distribution function (fODF) estimation and automatic fiber tractography. The proposed model estimates fODFs using diffusion values in a local block around each voxel, taking into account the spatial information in the area.
-
-
 
 
 
@@ -58,7 +57,16 @@ We tested our program on differents DWI data and confirmed that our pipeline per
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
+<!-- CITATION -->
+## Citation
+If you use CTtrack in your research or wish to refer to this approach, please use the following BibTeX entry.
+ ```sh
+@article{HOSSEINI2022100099,
+title = {CTtrack: A CNN+Transformer-based framework for fiber orientation estimation & tractography},
+journal = {Neuroscience Informatics},
+year = {2022},
+}
+```
 
 <!-- CONTACT -->
 ## Contact
